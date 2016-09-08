@@ -15,3 +15,12 @@ Route::get('/', 'PageController@index');
 
 Route::get('/news/show/{slug}','PageController@news');
 Route::get('/sponsors','PageController@sponsors');
+
+
+Route::get('about', function () {
+    return view('about');
+});
+
+Route::get('contact', function () {
+  return view('contact');
+});
