@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'PageController@index');
 
-Route::get('/news/show/{slug}','NewsController@show');
+Route::get('/news/show/{slug}','PageController@news');
+Route::get('/sponsors','PageController@sponsors');
