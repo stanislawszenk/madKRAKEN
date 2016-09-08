@@ -41,7 +41,7 @@
 <footer>
     <div class="container">
         <div class="col-lg-12">
-            <div class="text-center" style="margin-top:10px;">&copy; madKRAKEN Esports Club, All right Reserved. Design by <a href="https://twitter.com/sultanDaK1ng" target="_BLANK">sultaN</a>, Developped by <a href="https://twitter.com/StanislawSzenk" target="_BLANK">Stanislaw Szenk</a>.</div>
+            <div class="text-center" style="margin-top:10px;">&copy; madKRAKEN Esports Club, All right Reserved. Design by <a href="https://twitter.com/sultanDaK1ng" target="_BLANK">sultaN</a>, Developed by <a href="https://twitter.com/StanislawSzenk" target="_BLANK">Stanislaw Szenk</a>.</div>
         </div>
     </div>
 </footer>
