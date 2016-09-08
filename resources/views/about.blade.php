@@ -1,9 +1,10 @@
-@section
+@extends('layouts.master')
+@section('content')
 
  <div class="abouts">
   <div class="col-lg-4"></div>
   <div class="col-lg-4">
-   <img src="../../../../web/images/logo.png" alt="madKRAKEN" class="img-responsive"/>
+   <img src="/images/logo.png" alt="madKRAKEN" class="img-responsive"/>
   </div>
   <div class="col-lg-4"></div>
   <div class="col-lg-12 text-center">

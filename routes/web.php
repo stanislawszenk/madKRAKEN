@@ -12,3 +12,13 @@
 */
 
 Route::get('/', 'IndexController@index');
+Route::get('teams', 'IndexController@teams');
+Route::get('sponsors', 'IndexController@sponsors');
+
+Route::get('about', function () {
+    return view('about');
+});
+
+Route::get('contact', function () {
+  return view('contact');
+});
