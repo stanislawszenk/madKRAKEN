@@ -12,8 +12,8 @@
 */
 
 Route::get('/', 'PageController@index');
-
 Route::get('/news/show/{slug}','PageController@news');
+Route::get('/teams','PageController@teams');
 Route::get('/sponsors','PageController@sponsors');
 
 

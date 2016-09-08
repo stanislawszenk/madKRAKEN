@@ -32,12 +32,12 @@ class PageController extends Controller
     public function sponsors() {
         $sponsors = Sponsors::all();
 
-        return view('sponsors', ['sponsors', $sponsors]);
+        return view('sponsors', ['sponsors'=> $sponsors]);
     }
 
     public function teams() {
         $teams = Teams::all();
 
-        return view('sponsors', ['sponsors', $teams]);
+        return view('teams', ['teams'=> $teams]);
     }
 }
