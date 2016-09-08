@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'IndexController@index');
+
+Route::get('/news/show/{slug}','NewsController@show');
