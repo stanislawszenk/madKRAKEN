@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <div class="logo">
-                        <a href="/"><img src="../images/logo.png" alt="" class="img-responsive" class="logo"/></a>
+                        <a href="/"><img src="/images/logo.png" alt="" class="img-responsive" class="logo"/></a>
                     </div>
                 </div>
                 <ul class="nav navbar-nav">
