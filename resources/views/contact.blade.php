@@ -20,6 +20,14 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('Subject') !!}
+    {!! Form::text('subject', null, 
+        array('required', 
+              'class'=>'form-control', 
+              'placeholder'=>'subject')) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('Your E-mail Address') !!}
     {!! Form::text('email', null, 
         array('required', 

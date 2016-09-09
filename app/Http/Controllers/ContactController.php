@@ -19,6 +19,7 @@ public function store(ContactFormRequest $request)
         array(
             'name' => $request->get('name'),
             'email' => $request->get('email'),
+            'subject' => $request->get('subject'),
             'user_message' => $request->get('message')
         ), 
  function($message)
