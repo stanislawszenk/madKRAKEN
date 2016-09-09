@@ -15,12 +15,11 @@ Route::get('/', 'PageController@index');
 Route::get('/news/show/{slug}','PageController@news');
 Route::get('/teams','PageController@teams');
 Route::get('/sponsors','PageController@sponsors');
-
-
+Route::get('contact', 
+  ['as' => 'contact', 'uses' => 'ContactController@create']);
+Route::post('contact', 
+  ['as' => 'contact_store', 'uses' => 'ContactController@store']);
 Route::get('about', function () {
     return view('about');
 });
 
-Route::get('contact', function () {
-  return view('contact');
-});
