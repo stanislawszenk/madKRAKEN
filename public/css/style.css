@@ -8,11 +8,11 @@ body{
 }
 footer{
     display:block;
-    background: #060f1c;
+    background: rgba(6,15,28,0.6);
     border-top: solid 1px #081424;
-    position: relative;
+    position: fixed;
     color:#FFF;
-    bottom: -50px;
+    bottom: 0px;
     width: 100%;
     height:45px;
     clear:both;
