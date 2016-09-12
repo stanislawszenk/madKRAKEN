@@ -23,3 +23,10 @@ Route::get('about', function () {
     return view('about');
 });
 
+
+Auth::routes();
+
+Route::get('/admin', 'HomeController@index');
+Route::get('/admin/create-news', 'HomeController@create_news');
+Route::get('/admin/edit-news', 'HomeController@edit_news');
+Route::get('/admin/delete-news', 'HomeController@delete_news');
