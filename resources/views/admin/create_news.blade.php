@@ -14,7 +14,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Create News</div>
                 <div class="panel-body">
-                    {!! Form::open(array('route' => 'create-news', 'class' => 'form')) !!}
+                    {!! Form::open(array('route' => 'news_store', 'class' => 'form')) !!}
 
                     <div class="form-group">
                         {!! Form::label('News Title') !!}
@@ -27,7 +27,7 @@
                     <div class="form-group">
                         {!! Form::label('Content') !!}
                         {!! Form::textarea('content', null,
-                            array('required',
+                            array('',
                                   'class'=>'form-control myTextarea',
                                   'placeholder'=>'content')) !!}
                     </div>

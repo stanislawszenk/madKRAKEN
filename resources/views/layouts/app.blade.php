@@ -6,37 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>madKRAKEN Esports</title>
 
     <!-- Styles -->
         <link href="{{ asset('css/bootstrap.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
-    <script>
-    tinymce.init({
-  selector: 'textarea',
-  theme: 'modern',
-  plugins: [
-    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-    'searchreplace wordcount visualblocks visualchars code fullscreen',
-    'insertdatetime media nonbreaking save table contextmenu directionality',
-    'emoticons template paste textcolor colorpicker textpattern imagetools'
-  ],
-  toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-  toolbar2: 'print preview media | forecolor backcolor emoticons',
-  image_advtab: true,
-  templates: [
-    { title: 'Test template 1', content: 'Test 1' },
-    { title: 'Test template 2', content: 'Test 2' }
-  ],
-  content_css: [
-    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-    '//www.tinymce.com/css/codepen.min.css'
-  ]
- });</script>
+
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -52,7 +28,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/admin') }}">
                     madKRAKEN Esports
                 </a>
             </div>
@@ -99,5 +75,30 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src='{{ asset('js/tinymce.min.js') }}'></script>
+    <script>$(document).ready(function() {
+    tinymce.init({
+  selector: 'textarea',
+  theme: 'modern',
+  plugins: [
+    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+    'searchreplace wordcount visualblocks visualchars code fullscreen',
+    'insertdatetime media nonbreaking save table contextmenu directionality',
+    'emoticons template paste textcolor colorpicker textpattern imagetools'
+  ],
+  toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+  toolbar2: 'print preview media | forecolor backcolor emoticons',
+  image_advtab: true,
+  templates: [
+    { title: 'Test template 1', content: 'Test 1' },
+    { title: 'Test template 2', content: 'Test 2' }
+  ],
+  content_css: [
+    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+    '//www.tinymce.com/css/codepen.min.css'
+  ]
+ });});
+ </script>
 </body>
 </html>

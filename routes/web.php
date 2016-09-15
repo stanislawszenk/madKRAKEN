@@ -26,8 +26,10 @@ Route::get('about', function () {
 
 Auth::routes();
 
-Route::get('/admin', 'HomeController@index');
+Route::get('admin', 'HomeController@index');
 Route::get('admin/create-news',
   ['as' => 'create-news', 'uses' => 'CreateNewsController@create']);
-Route::get('/admin/edit-news', 'HomeController@edit_news');
-Route::get('/admin/delete-news', 'HomeController@delete_news');
+  Route::post('admin/create-news',
+    ['as' => 'news_store', 'uses' => 'CreateNewsController@store']);
+Route::get('admin/edit-news', 'HomeController@edit_news');
+Route::get('admin/delete-news', 'HomeController@delete_news');
