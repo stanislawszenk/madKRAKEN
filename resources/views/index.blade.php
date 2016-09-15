@@ -61,7 +61,7 @@
                             <span class="text-center">
                         <h2>{{ $post->title }}</h2></span>
                             <div class="caption_news">
-                                <p>{!! str_limit($post->content, $limit=400, $end='...') !!} <br/> En savoir plus, cliquez sur le petit plus.</p>
+                                {!! str_limit($post->content, $limit=200, $end='...') !!} <br/>
                             </div>
                             <a class="info" href="/news/show/{{ $post->id }}-{{ $post->slug }}"><b>+</b></a>
                         </div>

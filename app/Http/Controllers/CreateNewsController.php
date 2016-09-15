@@ -30,14 +30,13 @@ return view('admin/create_news');
     }
 
     public function store(CreateNewsFormRequest $request){
-        $title = $request->get('title');
-        $content = $request->get('content');
-        $images = $request->get('images');
-        $date = time();
-        $user = 'test';
+        $title = $request->title;
+        $content = $request->content;
+        $images = $request->images;
+        $user = $request->user()->name;
         $slug = $this->slug($title);
              \DB::insert('insert into posts (author, images, content, slug, title) values(?,?,?,?,?)',
               [$user, $images, $content, $slug, $title]);
-                return \Redirect::route('admin/create-news')->with('message', 'Thanks for posting!');
+         return Redirect('admin/create-news')->with('message', 'Post published');
     }
 }
