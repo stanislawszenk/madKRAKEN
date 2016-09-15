@@ -31,5 +31,6 @@ Route::get('admin/create-news',
   ['as' => 'create-news', 'uses' => 'CreateNewsController@create']);
   Route::post('admin/create-news',
     ['as' => 'news_store', 'uses' => 'CreateNewsController@store']);
-Route::get('admin/edit-news', 'HomeController@edit_news');
+Route::get('admin/edit_news', 'EditNewsController@create');
+Route::get('admin/edit-news-selected/{slug}','EditNewsController@edit');
 Route::get('admin/delete-news', 'HomeController@delete_news');
