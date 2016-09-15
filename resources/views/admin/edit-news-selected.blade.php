@@ -18,26 +18,23 @@
 
                     <div class="form-group">
                         {!! Form::label('News Title') !!}
-                        {!! Form::text('title', null,
+                        {!! Form::text('title', "$post->title",
                             array('required',
-                                  'class'=>'form-control',
-                                  'value'=>'{{ $post->title }}')) !!}
+                                  'class'=>'form-control')) !!}
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('Content') !!}
-                        {!! Form::textarea('content', null,
+                        {!! Form::textarea('content', "$post->content",
                             array('',
-                                  'class'=>'form-control myTextarea',
-                                  'value'=>'{{ $post->content }}')) !!}
+                                  'class'=>'form-control myTextarea')) !!}
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('Images Link') !!}
-                        {!! Form::text('images', null,
+                        {!! Form::text('images', $post->images,
                             array('required',
-                                  'class'=>'form-control',
-                                  'value'=>'{{ $post->images }}')) !!}
+                                  'class'=>'form-control')) !!}
                     </div>
 
                     <div class="form-group">

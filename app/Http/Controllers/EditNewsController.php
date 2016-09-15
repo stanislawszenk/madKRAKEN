@@ -32,7 +32,7 @@ class EditNewsController extends Controller
 
     public function edit($slug){
         $id = substr($slug, 0, strstr($slug, "-") + 1);
-
+        
         $post = Posts::where('id', $id)->first();
 
         if(count($post) == 0)
