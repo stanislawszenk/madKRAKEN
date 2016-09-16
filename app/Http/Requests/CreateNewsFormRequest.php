@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\Request;
 
-class CreateNewsFormRequest extends FormRequest
+class CreateNewsFormRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,10 +23,11 @@ class CreateNewsFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules = [
             'title' => 'required',
             'content' => 'required',
             'images' => 'required',
         ];
+        return $rules;
     }
 }
