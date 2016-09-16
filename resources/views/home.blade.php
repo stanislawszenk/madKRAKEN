@@ -10,8 +10,7 @@
                 <div class="panel-body">
                     <ul>
                         <li><a href="admin/create-news">Create News</a></li>
-                        <li><a href="admin/edit_news">Edit News</a></li>
-                        <li><a href="admin/delete_news">Delete News</a></li>
+                        <li><a href="admin/delete-news">Delete News</a></li>
                     </ul>
                 </div>
             </div>

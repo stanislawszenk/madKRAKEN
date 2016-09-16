@@ -5,11 +5,11 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit News</div>
+                <div class="panel-heading">Delete News</div>
                 <div class="panel-body">
                     <ul>
                             @foreach($news as $post)
-                        <li><a class="info" href="/admin/edit-news-selected/{{ $post->id }}-{{ $post->slug }}">{{ $post->title }}</a></li>
+                        <li><a class="info" href="/admin/delete-news/{{ $post->id }}">{{ $post->title }}</a></li> 
                             @endforeach
                     </ul>
                 </div>
