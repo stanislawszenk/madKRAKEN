@@ -1,17 +1,17 @@
 @extends('layouts.master')
 
 @section('content')
+<div class="panel panel-default">
+<div class="panel-body">
+{{var_dump($teams)}}
 
-    @foreach($team_player as $team)
-        {{var_dump($team_player)}}
-    <div class="col-lg-8">
-    <img src="{{ $team->images }}" alt="name" />
 </div>
+</div>
+    <div class="col-lg-8">
+    @foreach($teams as $team)
+
+    <img src="{{ $team->images }}" alt="name" />
+
     @endforeach
-    @foreach($team_player as $player)
-
-
-
-    <div class="row"><div class="col-lg-4"><h1>{{ $player->name }}</h1></div></div>
-    @endforeach
+    </div>
 @endsection
