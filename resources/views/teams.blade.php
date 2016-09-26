@@ -9,9 +9,9 @@
 </div>
     <div class="col-lg-8">
     @foreach($teams as $team)
-
-    <img src="{{ $team->images }}" alt="name" />
-
+    <img src="{{ $team->images }}" width="50%" height="50%" />
     @endforeach
+            @include('teams.player')
     </div>
+
 @endsection

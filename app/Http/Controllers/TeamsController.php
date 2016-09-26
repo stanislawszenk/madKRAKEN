@@ -10,10 +10,12 @@ use Illuminate\Http\Request;
 class TeamsController extends Controller
 {
     public function index() {
-        $team = \DB::table('teams')->join('team_players', 'id_team', '=', 'teams.id');
-        $players = \DB::table('team_players')->join('teams', 'teams.id', '=', 'team_players.id_team');
-        $teams = $team->union($players)->get();
-        return view('teams', ['teams'=> $teams]);
+        //Looking for teams+team_players with innerjoin
+        $teams = \DB::table('teams')->select('images')->get();
+        $players = \DB::table('team_players')
+        ->leftJoin('teams', 'id_team', '=', 'teams.id')
+        ->get(['team_players.*']);
+        return view('teams', ['teams'=> $teams, 'player' => $players]);
     }
 
 }
