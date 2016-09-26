@@ -13,7 +13,7 @@ class PageController extends Controller
 {
     public function index() {
         $news = Posts::orderBy('created_at', 'desc')->take(6)->get();
-        $sponsors = Sponsors::all();
+        $sponsors = Sponsors::take(4)->get();
 
         return view('index', ['news' => $news, 'sponsors' => $sponsors]);
     }
@@ -33,11 +33,5 @@ class PageController extends Controller
         $sponsors = Sponsors::all();
 
         return view('sponsors', ['sponsors'=> $sponsors]);
-    }
-
-    public function teams() {
-        $teams = Teams::all();
-
-        return view('teams', ['teams'=> $teams]);
     }
 }
