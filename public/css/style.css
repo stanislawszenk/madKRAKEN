@@ -31,9 +31,7 @@ footer{
     position:relative;
     float:left;
 }
-.container{
-    width: 1400px;
-}
+
 .navbar-inverse {
     background-color: transparent !important;
     border: 0px solid transparent;
@@ -64,10 +62,9 @@ footer{
 .news{
     position: relative;
     margin-top: 26px;
-    margin-right: 8px;
     float:left;
-    width: 421px;
-    height:356px;
+    width: 355px;
+    height:355px;
     overflow:hidden;
 }
 .news img{
@@ -206,9 +203,7 @@ transform:translatex(0);
 .sponsors{
     position: relative;
     float:left;
-    margin-right: -20px;
-    margin-top: 5px;
-    width: 203px;
+    width: 166px;
     height:141px;
     background: rgba(255,255,255,0.1);
     border-radius: 5px;
@@ -264,7 +259,6 @@ transform:translatex(0);
 .teams img{
     position:relative;
     float:left;
-    left: 8.2%;
     margin: 5px 0;
 }
 .teams .name{

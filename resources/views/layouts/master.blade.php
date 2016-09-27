@@ -2,10 +2,12 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport">
     <title>@yield('title') madKRAKEN Esports Club</title>
-
+    <link rel="icon" href="/images/favicon.jpg">
     <link href="{{ asset('css/bootstrap.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet">
+
 </head>
 <body>
 
