@@ -66,12 +66,12 @@ footer{
     margin-top: 26px;
     margin-right: 8px;
     float:left;
-    width: 421px; 
+    width: 421px;
     height:356px;
     overflow:hidden;
 }
 .news img{
-    width: 421px; 
+    width: 421px;
     height:356px;
     position:absolute;
     left:0;
@@ -258,7 +258,28 @@ transform:translatex(0);
     margin:20px;
 }
 
-
+.teams{
+    color:#FFF;
+}
+.teams img{
+    position:relative;
+    float:left;
+    left: 8.2%;
+    margin: 5px 0;
+}
+.teams .name{
+    font-size: 14pt;
+    color: #FFF;
+}
+.teams .nickname{
+    font-size: 16pt;
+    color:#1581d1;
+}
+.teams .player_introduce{
+    position: absolute;
+    left: 30%;
+    width: 60%;
+}
 .blog{
     background: rgba(74,105,151, 0.6);
     color:#FFF;

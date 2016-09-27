@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTeamPlayers extends Migration
+class CreateHotNews extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateTeamPlayers extends Migration
      */
     public function up()
     {
-        Schema::create('team_players', function (Blueprint $table) {
+        Schema::create('hot_news', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('firstname');
-            $table->string('nickname');
-            $table->string('images');
-            $table->text('description');
-            $table->integer('id_team');
+            $table->string('author');
+            $table->text('images');
+            $table->longText('content');
+            $table->string('slug');
+            $table->text('title');
         });
     }
 
@@ -31,6 +30,6 @@ class CreateTeamPlayers extends Migration
      */
     public function down()
     {
-        Schema::drop('team_players');
+        Schema::drop('hot_news');
     }
 }

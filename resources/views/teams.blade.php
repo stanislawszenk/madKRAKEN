@@ -1,19 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="panel panel-default">
-<div class="panel-body">
-
-
-    <div class="col-lg-8">
-    @foreach($teams as $team)
-        <img src="{{$team->images}}" width="50%" height="50%" />
-
-        @each('teams.player', $team->players, 'player')
-    @endforeach
+<div class="col-lg-12 blog">
+@foreach($teams as $team)
+    <div class="text-center">
+        <img src="{{$team->images}}" />
     </div>
-
-</div>
+        @each('teams.player', $team->players, 'player')
+@endforeach
 </div>
 
 @endsection

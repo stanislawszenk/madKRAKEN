@@ -6,6 +6,7 @@ use App\Teams;
 use App\User;
 use App\Posts;
 use App\Sponsors;
+use App\HotNews;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,8 @@ class PageController extends Controller
     public function index() {
         $news = Posts::orderBy('created_at', 'desc')->take(6)->get();
         $sponsors = Sponsors::take(4)->get();
-
-        return view('index', ['news' => $news, 'sponsors' => $sponsors]);
+        $hotnews = HotNews::all();
+        return view('index', ['news' => $news, 'sponsors' => $sponsors, 'hotnews' => $hotnews]);
     }
 
     public function news($slug) {
