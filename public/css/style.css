@@ -27,28 +27,57 @@ footer{
 **************************
 **************************
 */
-.logo{
-    position:relative;
-    float:left;
+/*.nav-container {
+    height: 15em;
+}*/
+
+.navbar-toggle {
+    top: 2em;
+}
+
+.navbar-collapse {
+    border-top: 0 !important;
+    box-shadow:none;
 }
 
 .navbar-inverse {
     background-color: transparent !important;
-    border: 0px solid transparent;
+    border: 0 solid transparent;
+    min-height: 10em;
 }
+
+.navbar-inverse, .navbar-inverse:hover .navbar-inverse:focus {
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: transparent;
+}
+
+
+
 .navbar-right{
     font-size: 14pt;
     font-weight: bold;
     margin-top: 30px;
-    color:#fff;
+    color: #fff;
+    text-align: right;
 }
+
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     color: #41ade2;
     background-color: transparent;
 }
-.navbar-inverse .navbar-nav > li > a:hover {
-    color: #41ade2;
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ddd;
 }
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #fff;
+}
+
+
 /*
 **************************
 **************************
@@ -59,13 +88,14 @@ footer{
 **************************
 **************************
 */
-.news{
+.news {
     position: relative;
     margin-top: 26px;
     float:left;
-    width: 355px;
-    height:355px;
+    height:350px;
+    width: 350px;
     overflow:hidden;
+    padding-left: 0;
 }
 .news img{
     width: 421px;
@@ -221,6 +251,13 @@ transform:translatex(0);
     padding-left: 10px;
     font-size: 25pt;
     text-transform: uppercase;
+}
+
+.carousel-caption {
+    max-width: 100%;
+    width:100%;
+    background-color: #ffb81c;
+    left: 0;
 }
 
  .carousel-inner > .item > img,

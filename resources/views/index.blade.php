@@ -30,41 +30,48 @@
     </div>
 
     {{-- news block --}}
-    <div class="col-md-8">
-        @foreach($news as $post)
-            <div class="news">
-                <div class="col-md-4 news">
-                    <div class="hovereffect">
-                        <img src="{{$post->images}}" alt="{{$post->title}}" class="img-responsive" />
-                        <div class="overlay">
-                            <span class="text-center">
-                        <h2>{{ $post->title }}</h2></span>
-                            <div class="caption_news">
-                                {!! str_limit($post->content, $limit=200, $end='...') !!} <br/>
+    <div class="row">
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                @foreach($news as $post)
+                    <div class="news">
+                        <div class="col-md-4 news">
+                            <div class="hovereffect">
+                                <img src="{{$post->images}}" alt="{{$post->title}}" class="img-responsive" />
+                                <div class="overlay">
+                                    <span class="text-center">
+                                <h2>{{ $post->title }}</h2></span>
+                                    <div class="caption_news">
+                                        {!! str_limit($post->content, $limit=200, $end='...') !!} <br/>
+                                    </div>
+                                    <a class="info" href="/news/show/{{ $post->id }}-{{ $post->slug }}"><b>+</b></a>
+                                </div>
                             </div>
-                            <a class="info" href="/news/show/{{ $post->id }}-{{ $post->slug }}"><b>+</b></a>
                         </div>
+                    </div>
+                @endforeach
+            </div>
+            {{-- sponsors block --}}
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                <div class="sponsors_princ">Our Sponsors</div>
+                @foreach($sponsors as $sponsor)
+                    <a href="{{ $sponsor->link }}" target="_blank">
+                        <div class="col-xs-12 col-md-3 sponsors">
+                            <img src="{{ $sponsor->images }}" alt="{{ $sponsor->name }}" class="img-responsive">
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+
+            <div class=" col-xs-12 col-md-6 col-md-12 col-lg-4">
+                <div class="sponsors_princ">Streams</div>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe src="https://player.twitch.tv/?channel=madkraken_tv" scrolling="no" class="embed-responsive-item"></iframe>
                     </div>
                 </div>
             </div>
-        @endforeach
-    </div>
-    {{-- sponsors block --}}
-    <div class="col-md-4">
-        <div class="sponsors_princ">Our Sponsors</div>
-        @foreach($sponsors as $sponsor)
-            <a href="{{ $sponsor->link }}" target="_blank">
-                <div class="col-md-3 sponsors">
-                    <img src="{{ $sponsor->images }}" alt="{{ $sponsor->name }}" class="img-responsive">
-                </div>
-            </a>
-        @endforeach
+        </div>
     </div>
 
-        <div class="col-md-4">
-            <div class="sponsors_princ">Streams</div>
-            <div class="col-md-3">
-                <iframe src="https://player.twitch.tv/?channel=madkraken_tv" frameborder="0" scrolling="no" height="308px" width="400.667px"></iframe>
-            </div>
-        </div>
+
 @endsection
