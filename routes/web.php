@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'PageController@index');
-Route::get('/news/show/{slug}','PageController@news');
+Route::get('/news/show/{id}-{slug}','PageController@news');
 Route::get('/teams','TeamsController@index');
 Route::get('/sponsors','PageController@sponsors');
 Route::get('contact',

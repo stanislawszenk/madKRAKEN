@@ -19,15 +19,13 @@ class PageController extends Controller
         return view('index', ['news' => $news, 'sponsors' => $sponsors, 'hotnews' => $hotnews]);
     }
 
-    public function news($slug) {
-        $id = substr($slug, 0, strstr($slug, "-") + 1);
-
+    public function news($id) {
         $post = Posts::where('id', $id)->first();
 
         if(count($post) == 0)
             return "Error";
 
-        return view('news', ['post' => $post]);
+        return view('news/news', ['post' => $post]);
     }
 
     public function sponsors() {
