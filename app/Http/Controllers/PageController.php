@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index() {
-        $news = Posts::orderBy('created_at', 'desc')->take(6)->get();
+        $news = Posts::orderBy('id', 'DESC')->take(6)->get();
         $sponsors = Sponsors::take(4)->get();
         $hotnews = HotNews::all();
         return view('index', ['news' => $news, 'sponsors' => $sponsors, 'hotnews' => $hotnews]);

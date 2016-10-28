@@ -224,7 +224,7 @@ transform:translatex(0);
 **************************
 **************************
 **************************
-***********NEWS***********
+***********Sponsors***********
 **************************
 **************************
 **************************
@@ -253,18 +253,6 @@ transform:translatex(0);
     text-transform: uppercase;
 }
 
-.carousel-caption {
-    max-width: 100%;
-    width:100%;
-    background-color: #ffb81c;
-    left: 0;
-}
-
- .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 100%;
-      margin: auto;
-  }
 .glyphicon-chevron-left{
     color: #1e8ed3;
 }
@@ -348,5 +336,17 @@ form.blogger ul li { color: #ff0000; margin-bottom: 5px; }
     position:absolute;
     background: rgba(2, 14, 30, 0.5);
     bottom: 0px;
-left: 0px;
+    left: 0px;
 }
+.carousel-caption {
+    max-width: 100%;
+    width:100%;
+    left: 0;
+}
+
+ .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      height: 412px;
+      margin: auto;
+  }
