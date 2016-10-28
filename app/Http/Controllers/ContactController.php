@@ -10,7 +10,7 @@ use App\Http\Requests\ContactFormRequest;
 class ContactController extends Controller
 {
     public function create(){
-        return view('contact');
+        return view('contact/contact');
     }
 public function store(ContactFormRequest $request)
 {
@@ -21,7 +21,7 @@ public function store(ContactFormRequest $request)
             'email' => $request->get('email'),
             'subject' => $request->get('subject'),
             'user_message' => $request->get('message')
-        ), 
+        ),
  function($message)
     {
         $message->from('contact@madkraken-esc.com');

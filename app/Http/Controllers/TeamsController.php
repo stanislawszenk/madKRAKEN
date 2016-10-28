@@ -18,7 +18,7 @@ class TeamsController extends Controller
 
         $teams = \App\Teams::all();
 
-        return view('teams', ['teams'=> $teams]);
+        return view('teams/teams', ['teams'=> $teams]);
     }
 
 }

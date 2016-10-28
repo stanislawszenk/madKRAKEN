@@ -31,6 +31,6 @@ class PageController extends Controller
     public function sponsors() {
         $sponsors = Sponsors::all();
 
-        return view('sponsors', ['sponsors'=> $sponsors]);
+        return view('sponsors/sponsors', ['sponsors'=> $sponsors]);
     }
 }
