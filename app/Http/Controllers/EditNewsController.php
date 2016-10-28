@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\CreateNewsFormRequest;
 use App\Posts;
-date_default_timezone_set("Europe/Paris"); 
 class EditNewsController extends Controller
 {
 
