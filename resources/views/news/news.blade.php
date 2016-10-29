@@ -12,4 +12,14 @@
     </div>
     <div class="clearfix"></div>
 </article>
+<article class="blog">
+    <h2>Commentaire</h2>
+    @foreach($comment as $com)
+    <div class="col-lg-2">{{$com->name}}</div>
+    <div class="col-lg-8">
+        <p>{{$com->message}}</p>
+    </div>
+    <div class="clearfix"></div>
+    @endforeach
+</article>
 @endsection

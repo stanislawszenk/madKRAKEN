@@ -26,19 +26,19 @@ Route::get('about', function () {
 
 // Login
 Route::group(['middleware' => ['web']], function() {
-    Route::get('/adm/login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
-    Route::post('/adm/login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
-    Route::post('/adm/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+    Route::get('/login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
+    Route::post('/login', ['as' => 'login.post', 'uses' => 'Auth\LoginController@login']);
+    Route::get('/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 });
 // Registration Routes...
-    Route::get('/adm/register', ['as' => 'register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
-    Route::post('/adm/register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
+    Route::get('/register', ['as' => 'register', 'uses' => 'Auth\RegisterController@showRegistrationForm']);
+    Route::post('/register', ['as' => 'register.post', 'uses' => 'Auth\RegisterController@register']);
 
 // Password Reset Routes...
-    Route::get('/adm/password/reset', ['as' => 'password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
-    Route::post('/adm/password/email', ['as' => 'password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
-    Route::get('/adm/password/reset/{token}', ['as' => 'password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
-    Route::post('/adm/password/reset', ['as' => 'password.reset.post', 'uses' => 'Auth\ResetPasswordController@reset']);
+    Route::get('/password/reset', ['as' => 'password.reset', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
+    Route::post('/password/email', ['as' => 'password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
+    Route::get('/password/reset/{token}', ['as' => 'password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
+    Route::post('/password/reset', ['as' => 'password.reset.post', 'uses' => 'Auth\ResetPasswordController@reset']);
 
 Route::get('admin', 'HomeController@index');
 Route::get('admin/create-news',

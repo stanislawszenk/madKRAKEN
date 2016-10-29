@@ -32,6 +32,11 @@
                         <li><a href="/sponsors">Sponsors</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
+                        @if(Auth::guest())
+                        <li class="disabled"><a href="#">Log/Sign in</a></li>
+                        @else
+                        <li><a href="#">{{Auth::user()->name}}</li>
+                        @endif
                     </ul>
                 </div>
             </div>

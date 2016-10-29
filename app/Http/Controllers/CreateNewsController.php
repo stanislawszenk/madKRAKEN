@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\CreateNewsFormRequest;
 use App\Posts;
+use Auth;
 
 class CreateNewsController extends Controller
 {
@@ -26,7 +27,12 @@ class CreateNewsController extends Controller
 }
     public function create()
     {
-return view('admin/create_news');
+        if(Auth::user()->admin == 1){
+            return view('admin/create_news');
+        }else{
+            return view('admin/permission');
+        }
+
     }
 
     public function store(CreateNewsFormRequest $request){
