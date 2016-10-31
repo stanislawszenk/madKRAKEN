@@ -10,6 +10,10 @@ use App\HotNews;
 use App\Comment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Requests\ContactFormRequest;
+use App\Http\Requests\CommentFormRequest;
+use Auth;
 
 class PageController extends Controller
 {
@@ -19,7 +23,6 @@ class PageController extends Controller
         $hotnews = HotNews::all();
         return view('index', ['news' => $news, 'sponsors' => $sponsors, 'hotnews' => $hotnews]);
     }
-
     public function news($id) {
         $post = Posts::where('id', $id)->first();
         $comment = \DB::table('comment')
@@ -33,6 +36,13 @@ class PageController extends Controller
         return view('news/news', ['post' => $post, 'comment' => $comment]);
     }
 
+    public function postComment(CommentFormRequest $request){
+        $message = $request->message;
+        $id = $request->news_id;
+        \DB::insert('insert into comment (news_id, user_id, message) values(?,?,?)',
+         [$id, Auth::user()->id, $message]);
+         return redirect()->back();
+    }
     public function sponsors() {
         $sponsors = Sponsors::all();
 

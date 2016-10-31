@@ -5,21 +5,12 @@
     <h2>{{ $post->title }}</h2>
     <div class="date">Written <time datetime="{{ $post->created_at }}">{{ date('F d, Y', strtotime($post->created_at)) }}</time> by {{ $post->author }}</div><br />
     <div class="col-lg-4">
-        <img src="{{ $post->images }}" alt="{{ $post->title }}" class="img-responsive">
+        <img src="{{ asset($post->images) }}" alt="{{ $post->title }}" class="img-responsive">
     </div>
     <div class="col-lg-8">
         <p>{!! $post->content !!}</p>
     </div>
     <div class="clearfix"></div>
 </article>
-<article class="blog">
-    <h2>Commentaire</h2>
-    @foreach($comment as $com)
-    <div class="col-lg-2">{{$com->name}}</div>
-    <div class="col-lg-8">
-        <p>{{$com->message}}</p>
-    </div>
-    <div class="clearfix"></div>
-    @endforeach
-</article>
+@include('comment.show')
 @endsection

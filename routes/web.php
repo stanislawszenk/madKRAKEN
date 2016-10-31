@@ -13,6 +13,7 @@
 
 Route::get('/', 'PageController@index');
 Route::get('/news/show/{id}-{slug}','PageController@news');
+Route::post('comment', ['as' => 'comment_post', 'uses'=>'PageController@postComment']);
 Route::get('/teams','TeamsController@index');
 Route::get('/sponsors','PageController@sponsors');
 Route::get('contact',
