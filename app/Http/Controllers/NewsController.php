@@ -25,7 +25,7 @@ public function index($id) {
     return view('news/news', ['post' => $post, 'comment' => $comment]);
 }
 
-public function update(ContactFormRequest $request, $id){
+public function update(CommentFormRequest $request, $id){
     $message = $request->message;
     $user = Auth::user()->id;
     \DB::insert('insert into comment (news_id, user_id, message) values(?,?,?)',
