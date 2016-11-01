@@ -6,17 +6,6 @@ body{
     background: #020e1e url(/images/background.png) no-repeat center top;
     min-height: 100%;
 }
-footer{
-    display:block;
-    background: rgba(6,15,28,0.6);
-    border-top: solid 1px #081424;
-    position: fixed;
-    color:#FFF;
-    bottom: 0px;
-    width: 100%;
-    height:45px;
-    clear:both;
-}
 /*
 **************************
 **************************
