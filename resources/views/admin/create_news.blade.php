@@ -14,7 +14,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Create News</div>
                 <div class="panel-body">
-                    {!! Form::open(array('route' => 'news_store', 'class' => 'form')) !!}
+                    {!! Form::open(array('route' => 'news_store', 'class' => 'form', 'files' => true)) !!}
 
                     <div class="form-group">
                         {!! Form::label('News Title') !!}
@@ -34,7 +34,7 @@
 
                     <div class="form-group">
                         {!! Form::label('Images Link') !!}
-                        {!! Form::text('images', null,
+                        {!! Form::file('images', null,
                             array('required',
                                   'class'=>'form-control',
                                   'placeholder'=>'The link of the images')) !!}

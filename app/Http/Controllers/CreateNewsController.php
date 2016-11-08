@@ -38,9 +38,12 @@ class CreateNewsController extends Controller
     public function store(CreateNewsFormRequest $request){
         $title = $request->title;
         $content = $request->content;
-        $images = $request->images;
+        $file = $request->file('images');
         $user = $request->user()->name;
         $slug = $this->slug($title);
+        $destinationPath = 'uploads/news/';
+        $file->move($destinationPath,$file->getClientOriginalName());
+        $images = '/'.$destinationPath.''.$file->getClientOriginalName();
              \DB::insert('insert into posts (author, images, content, slug, title) values(?,?,?,?,?)',
               [$user, $images, $content, $slug, $title]);
               \DB::insert('insert into hot_news (author, images, content, slug, title) values(?,?,?,?,?)',
