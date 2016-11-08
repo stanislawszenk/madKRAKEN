@@ -40,7 +40,7 @@
                             @if(Auth::user()->admin >=1)
                             <li class="dropdown-submenu"><a tabindex="-1" href="#">Rédaction</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/admin/createNews">Créer une actualité</a></li>
+                                    <li><a href="/admin/create-news">Créer une actualité</a></li>
                                     <li><a href="/admin/edit-news">Editer une actualité</a></li>
                                     <li><a href="/admin/delete-news">Supprimer une actualité</a></li>
                                 </ul>
