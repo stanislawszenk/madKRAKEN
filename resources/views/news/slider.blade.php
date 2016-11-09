@@ -1,15 +1,15 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        @foreach($hotnews as $hot)
-        <div class="item @if($hot->id == $hot->first()->id) {{ 'active' }} @endif">
+        @foreach($hotnews as $index => $hot)
+        <div class="item @if($index == 0) {{ 'active' }} @endif">
         <img src="{{ $hot->images }}" alt="{{ $hot->title }}">
         <div class="carousel-caption carousel_text">
             <h3><a class="info" href="/news/show/{{ $hot->id }}-{{ $hot->slug }}">{{ $hot->title }}</a></h3>
             <p>{!! str_limit($hot->content, $limit=200, $end='...') !!}</p>
         </div>
         </div>
-        @endforeach    
+        @endforeach
     </div>
 
     <!-- Left and right controls -->

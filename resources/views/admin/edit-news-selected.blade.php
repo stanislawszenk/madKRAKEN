@@ -32,7 +32,7 @@
 
                     <div class="form-group">
                         {!! Form::label('Images Link') !!}
-                        {!! Form::text('images', $post->images,
+                        {!! Form::file('images',
                             array('required',
                                   'class'=>'form-control')) !!}
                     </div>

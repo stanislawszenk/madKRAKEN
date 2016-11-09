@@ -25,6 +25,15 @@ class CreateNewsController extends Controller
     $str = preg_replace('# #', '-', $str);
     return $str;
 }
+static function resumeText($str, $charset='utf-8')
+{
+    $resume = strip_tags($str);
+    $resume = html_entity_decode($resume);
+    $resume = urldecode($resume);
+    $resume = preg_replace('/ +/', ' ', $resume);
+    $resume = trim($resume);
+    return $resume;
+}
     public function create()
     {
         if(Auth::user()->admin == 1){
@@ -41,13 +50,16 @@ class CreateNewsController extends Controller
         $file = $request->file('images');
         $user = $request->user()->name;
         $slug = $this->slug($title);
+        $resume = $this->resumeText($content);
         $destinationPath = 'uploads/news/';
         $file->move($destinationPath,$file->getClientOriginalName());
         $images = '/'.$destinationPath.''.$file->getClientOriginalName();
-             \DB::insert('insert into posts (author, images, content, slug, title) values(?,?,?,?,?)',
-              [$user, $images, $content, $slug, $title]);
+
+             \DB::insert('insert into posts (author, images, content, resume, slug, title) values(?,?,?,?,?,?)',
+              [$user, $images, $content, $resume, $slug, $title]);
+
               \DB::insert('insert into hot_news (author, images, content, slug, title) values(?,?,?,?,?)',
-               [$user, $images, $content, $slug, $title]);
+               [$user, $images, $resume, $slug, $title]);
          return Redirect('admin/create-news')->with('message', 'Post published');
     }
 }

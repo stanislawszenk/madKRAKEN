@@ -9,7 +9,7 @@
                         <span class="text-center">
                     <h2>{{ $post->title }}</h2></span>
                         <div class="caption_news">
-                            {!! str_limit($post->content, $limit=200, $end='...') !!} <br/>
+                            {!! str_limit($post->resume, $limit=200, $end='...') !!} <br/>
                         </div>
                         <a class="info" href="/news/show/{{ $post->id }}-{{ $post->slug }}"><b>+</b></a>
                     </div>

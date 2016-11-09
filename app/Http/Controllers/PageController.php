@@ -20,7 +20,7 @@ class PageController extends Controller
     public function index() {
         $news = Posts::orderBy('id', 'DESC')->take(6)->get();
         $sponsors = Sponsors::take(4)->get();
-        $hotnews = HotNews::all();
+        $hotnews = HotNews::orderBy('id', 'DESC')->take(6)->get();
         return view('index', ['news' => $news, 'sponsors' => $sponsors, 'hotnews' => $hotnews]);
     }
     public function news($id) {

@@ -28,7 +28,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/admin') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     madKRAKEN Esports
                 </a>
             </div>
@@ -53,14 +53,9 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="{{ url('/logout') }}"
-                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
+                                    <a href="{{ url('/logout') }}">
                                         Logout
                                     </a>
-
-                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                    </form>
                                 </li>
                             </ul>
                         </li>
