@@ -21,7 +21,7 @@ Route::get('contact',
 Route::post('contact',
   ['as' => 'contact_store', 'uses' => 'ContactController@store']);
 Route::get('about', function () {
-    return view('about');
+    return view('about/about');
 });
 
 

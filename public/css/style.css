@@ -19,11 +19,18 @@ body{
 /*.nav-container {
     height: 15em;
 }*/
+.contact{
+    background: rgba(2, 14, 30, 0.8);
+    color: #FFF;
+}
+.contact .input-group{
+    width: 50%;
+}
 .modal-content {
     position: relative;
     background-color: #020e1e;
-    border: 1px solid #999999;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid transparent;
+    border: 1px solid transparent;
     border-radius: 6px;
     -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
@@ -31,6 +38,39 @@ body{
     background-clip: padding-box;
     outline: 0;
     color:#FFF;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid transparent;
+}
+.nav-tabs {
+    border-bottom: 1px solid #020e1e;
+}
+.nav-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid #020e1e;
+    border-radius: 0px 0px 0 0;
+    padding-left: 38%;
+    color:#FFF;
+}
+.nav-tabs > li > a:hover {
+    background: #11303d;
+    border: 1px solid #11303d
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #FFF;
+    background-color: #11303d;
+    border: 1px solid #11303d;
+    border-bottom-color: transparent;
+    cursor: default;
+    padding-left: 38%;
+}
+.nav-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+    width: 50%;
 }
 .navbar-toggle {
     top: 2em;
@@ -294,11 +334,11 @@ transform:translatex(0);
     width: 202px;
     height:140px;
 }
-.sponsors_princ{
-    color:#FFF;
-    border-left: solid 2px #199bf2;
-    border-radius:1px;
-    margin-top:52px;
+.sponsors_princ {
+    color: #FFF;
+    border-left: solid 4px #199bf2;
+    border-radius: 1px;
+    margin-top: 10px;
     padding-left: 10px;
     font-size: 25pt;
     text-transform: uppercase;
