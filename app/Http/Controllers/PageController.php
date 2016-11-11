@@ -41,7 +41,7 @@ class PageController extends Controller
         $id = $request->news_id;
         \DB::insert('insert into comment (news_id, user_id, message) values(?,?,?)',
          [$id, Auth::user()->id, $message]);
-         return redirect()->back();
+         return back();
     }
     public function sponsors() {
         $sponsors = Sponsors::all();

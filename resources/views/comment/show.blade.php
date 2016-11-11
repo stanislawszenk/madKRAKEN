@@ -1,4 +1,4 @@
-@if(count($comment) > 1))
+@if(count($comment) >= 1))
 <article class="blog">
     <h2>Commentaire</h2>
     @foreach($comment as $com)

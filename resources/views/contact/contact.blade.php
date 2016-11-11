@@ -73,11 +73,11 @@
         </div>
         <div class="col-lg-4">
             <h1>OTHER CONTACT</h1>
-            <p>General Contact:</p>
+            <p>GENERAL CCONTACT</p>
             <p><a href="mailto:contact@madkraken-esc.com" target="_BLANK">contact@madkraken-esc.com</a></p>
-            <p>Partnership</p>
+            <p>PARTNERSHIP</p>
             <p><a href="mailto:hujino@madkraken-esc.com" target="_BLANK">hujino@madkraken-esc.com</a></p>
-            <p>Website Issues</p>
+            <p>WEBSITE ISSUES</p>
             <p><a href="mailto:website@madkraken-esc.com" target="_BLANK">website@madkraken-esc.com</a></p>
         </div>
     </div>
