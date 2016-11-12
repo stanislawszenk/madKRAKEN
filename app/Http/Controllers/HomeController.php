@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Posts;
+use App\Comment;
 
 class HomeController extends Controller
 {
@@ -23,7 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin/home');
+        $news = Posts::orderBy('id', 'DESC')->get();
+        $comment = \DB::table('comment')
+                    ->join('users', 'comment.user_id', '=', 'users.id')
+                    ->select('users.*', 'comment.*')
+                    ->where('comment.news_id', '=', 'posts.id')
+                    ->get();
+        return view('admin/home', ['post' => $post, 'comment' => $comment]);
     }
     public function create_news()
     {
