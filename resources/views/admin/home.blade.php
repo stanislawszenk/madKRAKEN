@@ -9,7 +9,7 @@
             <h2>Last News</h2>
         <ul class="last_news">
             @foreach($post as $news)
-        <li><h3><a class="btn" href="/admin/edit-news/{{ $news->id }}/edit" target="_BLANK">{{$news->title}}</a></h3></li>
+        <li><h3><a class="btn btn-info btn-block" href="/admin/edit-news/{{ $news->id }}/edit" target="_BLANK">{{$news->title}}</a></h3></li>
             @endforeach
         </ul>
         </div>
