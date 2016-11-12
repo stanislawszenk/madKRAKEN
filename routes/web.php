@@ -23,6 +23,7 @@ Route::post('contact',
 Route::get('about', function () {
     return view('about/about');
 });
+Route::get('profile', function () {return view('profile/index');});
 
 
 // Login
