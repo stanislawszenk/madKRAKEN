@@ -18,7 +18,8 @@ class CreateCommentTable extends Migration
             $table->integer('news_id');
             $table->integer('user_id');
             $table->text('message');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

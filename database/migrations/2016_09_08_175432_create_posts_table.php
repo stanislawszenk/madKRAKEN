@@ -18,9 +18,11 @@ class CreatePostsTable extends Migration
             $table->string('author');
             $table->text('images');
             $table->longText('content');
+            $table->longText('resume');
             $table->string('slug');
             $table->text('title');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 
