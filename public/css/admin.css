@@ -1,3 +1,14 @@
+.last_news{
+    position:relative;
+    margin:auto;
+    display:block;
+    width:150px;
+    line-height:50px;
+    vertical-align:middle;
+    color:white;
+    text-decoration:none
+}
+
 /*Main CSS*/
 .container-fluid {
     margin-right: auto;

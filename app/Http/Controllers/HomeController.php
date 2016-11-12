@@ -31,7 +31,7 @@ class HomeController extends Controller
                     ->select('users.*', 'comment.*')
                     ->where('comment.news_id', '=', 'posts.id')
                     ->get();
-        return view('admin/home', ['post' => $post, 'comment' => $comment]);
+        return view('admin/home', ['post' => $news, 'comment' => $comment]);
     }
     public function create_news()
     {
