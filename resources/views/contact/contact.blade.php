@@ -66,14 +66,16 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Contact Us!',
-                array('class'=>'btn btn-primary')) !!}
+                <label class="col-md-2 control-label"></label>
+<div class="col-md-4">
+  <button type="submit" class="btn btn-primary" >Send <span class="glyphicon glyphicon-send"></span></button>
+</div>
             </div>
             {!! Form::close() !!}
         </div>
         <div class="col-lg-4">
             <h1>OTHER CONTACT</h1>
-            <p>GENERAL CCONTACT</p>
+            <p>GENERAL CONTACT</p>
             <p><a href="mailto:contact@madkraken-esc.com" target="_BLANK">contact@madkraken-esc.com</a></p>
             <p>PARTNERSHIP</p>
             <p><a href="mailto:hujino@madkraken-esc.com" target="_BLANK">hujino@madkraken-esc.com</a></p>
