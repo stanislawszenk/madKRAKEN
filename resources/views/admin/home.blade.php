@@ -18,7 +18,11 @@
 
         <div class="sales report">
             <h2>Last users Registered</h2>
-
+            <ul class="last_news">
+            @foreach($user as $user)
+            <li><h3><a class="btn btn-info btn-block" href="/profile/{{$user->id}}-{{$user->name}}" target="_BLANK">{{$user->name}}</a></h3></li>
+            @endforeach
+            </ul>
         </div>
     </div>
 </div>

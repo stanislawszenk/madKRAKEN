@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Posts;
 use App\Comment;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -31,7 +32,8 @@ class HomeController extends Controller
                     ->select('users.*', 'comment.*')
                     ->where('comment.news_id', '=', 'posts.id')
                     ->get();
-        return view('admin/home', ['post' => $news, 'comment' => $comment]);
+        $user = User::all();
+        return view('admin/home', ['post' => $news, 'comment' => $comment, 'user'=>$user]);
     }
     public function create_news()
     {
