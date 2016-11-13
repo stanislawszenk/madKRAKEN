@@ -18,11 +18,31 @@
 
         <div class="sales report">
             <h2>Last users Registered</h2>
-            <ul class="last_news">
-            @foreach($user as $user)
-            <li><h3><a class="btn btn-info btn-block" href="/profile/{{$user->id}}-{{$user->name}}" target="_BLANK">{{$user->name}}</a></h3></li>
-            @endforeach
-            </ul>
+<table class="table table-striped">
+   <thead>
+     <tr>
+         <th>Nom</th>
+         <th>Email</th>
+         <th>Admin</th>
+         <th>View Profile</th>
+     </tr>
+   </thead>
+   <tbody>
+       @foreach($user as $user)
+       <tr>
+           <td>{{$user->name}}</td>
+           <td>{{$user->email}}</td>
+           <td>{{ $user->admin ? 'Administrateur' : 'Joueur'}}</td>
+           <td><a href="{{URL::asset('profile/'.$user->id)}}"<i class="fa fa-user-circle-o" aria-hidden="true"></i></td>
+       </tr>
+       @endforeach
+   </tbody>
+ </table>
+            <table class="last_users">
+
+</table>
+                </tr>
+        </table>
         </div>
     </div>
 </div>

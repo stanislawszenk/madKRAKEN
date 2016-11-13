@@ -12,7 +12,7 @@
         <link href="{{ asset('css/bootstrap.css') }}" type="text/css" rel="stylesheet">
         <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet">
         <link href="{{ asset('css/admin.css') }}" type="text/css" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body class="home">
     <div class="container-fluid display-table">

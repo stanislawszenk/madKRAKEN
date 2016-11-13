@@ -9,6 +9,13 @@
     text-decoration: none;
 }
 
+.last_users{
+    position: relative;
+    margin: 50px 0 0 15px;
+    border: 1px solid white
+}
+
+
 /*Main CSS*/
 .container-fluid {
     margin-right: auto;
