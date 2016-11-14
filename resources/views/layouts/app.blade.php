@@ -10,7 +10,6 @@
     <title>madKRAKEN Esports</title>
 
         <link href="{{ asset('css/bootstrap.css') }}" type="text/css" rel="stylesheet">
-        <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet">
         <link href="{{ asset('css/admin.css') }}" type="text/css" rel="stylesheet">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -25,8 +24,8 @@
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                        <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">News</span></a></li>
+                        <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{URL::asset('admin')}}"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li class="{{ Request::is('admin/news') ? 'active' : '' }}"><a href="{{URL::asset('admin/news')}}"><i class="fa fa-newspaper-o" aria-hidden="true"></i><span class="hidden-xs hidden-sm">News</span></a></li>
                         <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Sponsors</span></a></li>
                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Teams</span></a></li>
                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
@@ -125,7 +124,14 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src='{{ asset('js/tinymce.min.js') }}'></script>
-    <script>$(document).ready(function() {
+    <script>
+     var xhr2 = false;
+    $(document).ready(function() {
+        if(xhr2 !== false)
+        {
+            xhr2.abort();
+            xhr2 = false;
+        }
    $('[data-toggle="offcanvas"]').click(function(){
        $("#navigation").toggleClass("hidden-xs");
    });
@@ -149,7 +155,35 @@
     '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
     '//www.tinymce.com/css/codepen.min.css'
   ]
- });});
+ });
+});
+
+ $(".ajaxModal").click(function()
+ {
+     if(xhr2 !== false)
+     {
+         xhr2.abort();
+         xhr2 = false;
+     }
+
+     ajaxModal(this);
+ });
+ function ajaxModal(className)
+ {
+     var block_content = $(className).attr("data-target");
+     block_content = block_content+"-content";
+     $(block_content).empty();
+     xhr2 = $.ajax({
+         type: "GET",
+         url: $(className).attr("urldata"),
+         data: 'html',
+         success: function(data){
+             if(data){
+                 $(block_content).append(data);
+             }
+         }
+     });
+ }
  </script>
 </body>
 </html>

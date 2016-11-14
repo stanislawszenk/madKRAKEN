@@ -1,18 +1,6 @@
-@extends('layouts.app')
-
-@section('content')
-
-<ul>
-    @foreach($errors->all() as $error)
-        <li>{{ $error }}</li>
-    @endforeach
-</ul>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Create News</div>
+<div class="modal-header"><div class="alert alert-info">
+Edit News <strong>{{$post->title}}</strong>
+</div></div>
                 <div class="panel-body">
                     {!! Form::model($id, ['files' => true, 'url' => action("EditNewsController@update", $id), 'method' => 'update' == "store" ? "Post" : "Put"]) !!}
 
@@ -33,8 +21,7 @@
                     <div class="form-group">
                         {!! Form::label('Images Link') !!}
                         {!! Form::file('images',
-                            array('required',
-                                  'class'=>'form-control')) !!}
+                            array('required')) !!}
                     </div>
 
                     <div class="form-group">
@@ -42,16 +29,39 @@
                           array('class'=>'btn btn-primary')) !!}
                     </div>
                     {!! Form::close() !!}
-                    @if(Session::has('message'))
-                        <div class="alert alert-info">
-                          {{Session::get('message')}}
-                        </div>
-                    @endif
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+<script>
+$(document).ready(function() {
+tinymce.init({
+selector: 'textarea',
+theme: 'modern',
+plugins: [
+'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+'searchreplace wordcount visualblocks visualchars code fullscreen',
+'insertdatetime media nonbreaking save table contextmenu directionality',
+'emoticons template paste textcolor colorpicker textpattern imagetools'
+],
+toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+toolbar2: 'print preview media | forecolor backcolor emoticons',
+image_advtab: true,
+templates: [
+{ title: 'Test template 1', content: 'Test 1' },
+{ title: 'Test template 2', content: 'Test 2' }
+],
+content_css: [
+'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+'//www.tinymce.com/css/codepen.min.css'
+]
+});
+});
+$(".ajaxModal").click(function()
+{
+    if(xhr2 !== false)
+    {
+        xhr2.abort();
+        xhr2 = false;
+    }
 
-
-@endsection
+    ajaxModal(this);
+});
+</script>

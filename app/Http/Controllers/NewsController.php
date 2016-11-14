@@ -7,7 +7,7 @@ use App\Comment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Requests\ContactFormRequest;
+use App\Http\Requests\CommentFormRequest;
 
 class NewsController extends Controller
 {

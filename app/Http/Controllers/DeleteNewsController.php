@@ -21,6 +21,6 @@ class DeleteNewsController extends Controller
     }
     public function deleteNews($id){
             \DB::table('posts')->where('id', '=', $id)->delete();
-            return Redirect('admin/delete-news')->with('message', 'Post deleted');
+            return Redirect('admin/news')->with('message', 'Post deleted!');
     }
 }

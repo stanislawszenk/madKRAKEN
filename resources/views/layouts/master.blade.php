@@ -38,6 +38,7 @@
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{Auth::user()->name}}</a>
                             <ul class="dropdown-menu" role="menu">
                             @if(Auth::user()->admin >=1)
+                            <li><a href="/admin">Admin Panel</a></li>
                             <li class="dropdown-submenu"><a tabindex="-1" href="#">Rédaction</a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="/admin/create-news">Créer une actualité</a></li>

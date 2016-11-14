@@ -60,6 +60,6 @@ static function resumeText($str, $charset='utf-8')
 
               \DB::insert('insert into hot_news (author, images, content, slug, title) values(?,?,?,?,?)',
                [$user, $images, $resume, $slug, $title]);
-         return Redirect('admin/create-news')->with('message', 'Post published');
+         return Redirect('admin/news')->with('message', 'Post published');
     }
 }

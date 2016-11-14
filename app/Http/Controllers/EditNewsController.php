@@ -53,7 +53,7 @@ class EditNewsController extends Controller
         if(count($post) == 0)
             return "Error";
 
-        return view('admin/edit-news-selected', ['post' => $post], compact('id'));
+        return view('admin/news/edit-news-selected', ['post' => $post], compact('id'));
     }
     public function update($id, CreateNewsFormRequest $request)
 {
@@ -68,6 +68,6 @@ class EditNewsController extends Controller
     \DB::table('posts')
     ->where('id', $id)
     ->update(['author' => $data['user_id'], 'images' => $images, 'content' => $data['content'], 'resume' => $resume, 'slug' => $slug, 'title' => $data['title'], 'updated_at' => date('Y-m-d H:i:s')]);
-    return redirect(action('EditNewsController@index'))->with('success', 'News Updated!');
+    return redirect()->back()->with('message', 'News Updated!');
 }
 }

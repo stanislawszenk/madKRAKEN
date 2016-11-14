@@ -42,7 +42,11 @@ Route::group(['middleware' => ['web']], function() {
     Route::get('/password/reset/{token}', ['as' => 'password.reset.token', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
     Route::post('/password/reset', ['as' => 'password.reset.post', 'uses' => 'Auth\ResetPasswordController@reset']);
 
+
+
+//admin Section
 Route::get('admin', 'HomeController@index');
+Route::get('admin/news', 'AdminNewsController@index');
 Route::get('admin/create-news',
   ['as' => 'create-news', 'uses' => 'CreateNewsController@create']);
   Route::post('admin/create-news',
