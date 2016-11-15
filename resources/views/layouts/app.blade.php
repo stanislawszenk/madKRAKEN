@@ -26,7 +26,7 @@
                     <ul>
                         <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{URL::asset('admin')}}"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                         <li class="{{ Request::is('admin/news') ? 'active' : '' }}"><a href="{{URL::asset('admin/news')}}"><i class="fa fa-newspaper-o" aria-hidden="true"></i><span class="hidden-xs hidden-sm">News</span></a></li>
-                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Sponsors</span></a></li>
+                        <li class="{{ Request::is('admin/spons') ? 'active' : '' }}"><a href="{{URL::asset('admin/spons')}}"><i class="fa fa-address-book" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Sponsors</span></a></li>
                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Teams</span></a></li>
                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
                     </ul>
@@ -47,21 +47,10 @@
                                     </button>
                                 </div>
                             </nav>
-                            <div class="search hidden-xs hidden-sm">
-                                <input type="text" placeholder="Search" id="search">
-                            </div>
                         </div>
                         <div class="col-md-5">
                             <div class="header-rightside">
                                 <ul class="list-inline header-top pull-right">
-                                    <li class="hidden-xs"><a href="#" class="add-project" data-toggle="modal" data-target="#add_project">Add Project</a></li>
-                                    <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                                    <li>
-                                        <a href="#" class="icon-info">
-                                            <i class="fa fa-bell" aria-hidden="true"></i>
-                                            <span class="label label-primary">3</span>
-                                        </a>
-                                    </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{Auth::user()->avatar}}" alt="user">
                                             <b class="caret"></b></a>

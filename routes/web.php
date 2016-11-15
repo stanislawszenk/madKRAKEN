@@ -24,6 +24,7 @@ Route::get('about', function () {
     return view('about/about');
 });
 Route::get('profile', function () {return view('profile/index');});
+Route::get('profile/{id}', 'ProfileController@index');
 
 
 // Login
@@ -54,3 +55,4 @@ Route::get('admin/create-news',
 Route::resource('admin/edit-news', 'EditNewsController');
 Route::get('admin/delete-news', 'DeleteNewsController@index');
 Route::get('admin/delete-news/{id}', 'DeleteNewsController@deleteNews');
+Route::resource('admin/spons', 'SponsorsController');

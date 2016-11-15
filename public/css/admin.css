@@ -472,23 +472,6 @@ header {
     padding: 15px;
     width: 100%;
 }
-.sales button {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border: 1px solid #dadee7;
-    border-radius: 100px;
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    padding-right: 32px;
-    color: #0e1a35;
-}
-
-.sales button::before {
-    content: "";
-    font-family: FontAwesome;
-    position: absolute;
-    right: 12px;
-    top: 11px;
-}
 .sales  .btn-group {
     float: right;
 }
