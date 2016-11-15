@@ -7,6 +7,7 @@
     <link rel="icon" href="/images/favicon.jpg">
     <link href="{{ asset('css/bootstrap.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -39,13 +40,6 @@
                             <ul class="dropdown-menu" role="menu">
                             @if(Auth::user()->admin >=1)
                             <li><a href="/admin">Admin Panel</a></li>
-                            <li class="dropdown-submenu"><a tabindex="-1" href="#">Rédaction</a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/admin/create-news">Créer une actualité</a></li>
-                                    <li><a href="/admin/edit-news">Editer une actualité</a></li>
-                                    <li><a href="/admin/delete-news">Supprimer une actualité</a></li>
-                                </ul>
-                            </li>
                             @endif
                             <li><a href="/logout">Logout</a></li>
                         </ul>
@@ -94,4 +88,40 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+var xhr2 = false;
+$(document).ready(function() {
+   if(xhr2 !== false)
+   {
+       xhr2.abort();
+       xhr2 = false;
+   }
+   });
+$(".ajaxModal").click(function()
+{
+    if(xhr2 !== false)
+    {
+        xhr2.abort();
+        xhr2 = false;
+    }
+
+    ajaxModal(this);
+});
+function ajaxModal(className)
+{
+    var block_content = $(className).attr("data-target");
+    block_content = block_content+"-content";
+    $(block_content).empty();
+    xhr2 = $.ajax({
+        type: "GET",
+        url: $(className).attr("urldata"),
+        data: 'html',
+        success: function(data){
+            if(data){
+                $(block_content).append(data);
+            }
+        }
+    });
+}
+</script>
 </html>

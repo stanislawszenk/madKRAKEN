@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Posts;
-use App\Comment;
 use App\User;
-
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -26,25 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(Auth::user()->admin == 1){
         $news = Posts::orderBy('id', 'DESC')->get();
-        $comment = \DB::table('comment')
-                    ->join('users', 'comment.user_id', '=', 'users.id')
-                    ->select('users.*', 'comment.*')
-                    ->where('comment.news_id', '=', 'posts.id')
-                    ->get();
         $user = User::all();
-        return view('admin/home', ['post' => $news, 'comment' => $comment, 'user'=>$user]);
+        return view('admin/home', ['post' => $news, 'user'=>$user]);
+    }else{
+        return view('admin/permission');
     }
-    public function create_news()
-    {
-        return view('admin/create_news');
-    }
-    public function edit_news()
-    {
-        return view('admin/edit_news');
-    }
-    public function delete_news()
-    {
-        return view('admin/delete_news');
-    }
+}
 }
