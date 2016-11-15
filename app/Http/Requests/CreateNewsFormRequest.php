@@ -26,7 +26,7 @@ class CreateNewsFormRequest extends Request
         $rules = [
             'title' => 'required',
             'content' => 'required',
-            'images' => 'required',
+            'images' => 'required|image',
         ];
         return $rules;
     }

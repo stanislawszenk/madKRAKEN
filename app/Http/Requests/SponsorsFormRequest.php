@@ -27,7 +27,7 @@ class SponsorsFormRequest extends Request
             'name' => 'required',
             'link' => 'required',
             'description' => 'required',
-            'images' => 'required',
+            'images' => 'required|image',
         ];
         return $rules;
     }

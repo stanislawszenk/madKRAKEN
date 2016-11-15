@@ -18,7 +18,7 @@
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
                 <div class="logo">
-                    <a hef="/"><img src="{{asset('/images/logo.png')}}" alt="merkery_logo" class="hidden-xs hidden-sm">
+                    <a hef="../"><img src="{{asset('/images/logo.png')}}" alt="merkery_logo" class="hidden-xs hidden-sm">
                         <img src="{{asset('/images/logo.png')}}" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
                     </a>
                 </div>
@@ -29,6 +29,7 @@
                         <li class="{{ Request::is('admin/spons') ? 'active' : '' }}"><a href="{{URL::asset('admin/spons')}}"><i class="fa fa-address-book" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Sponsors</span></a></li>
                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Teams</span></a></li>
                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
+                        <li><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Quit Panel</span></a></li>
                     </ul>
                 </div>
             </div>

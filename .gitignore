@@ -1,5 +1,8 @@
 /node_modules
 /public/storage
+/public/uploads/profile
+/public/uploads/news
+/public/uploads/sponsors
 /vendor
 /.idea
 Homestead.json
