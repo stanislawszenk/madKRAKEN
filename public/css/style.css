@@ -311,6 +311,7 @@ filter:alpha(opacity=100);
 transform:translatex(0);
 }
 
+
 /*
 **************************
 **************************
@@ -369,27 +370,6 @@ transform:translatex(0);
     margin:20px;
 }
 
-.teams{
-    color:#FFF;
-}
-.teams img{
-    position:relative;
-    float:left;
-    margin: 5px 0;
-}
-.teams .name{
-    font-size: 14pt;
-    color: #FFF;
-}
-.teams .nickname{
-    font-size: 16pt;
-    color:#1581d1;
-}
-.teams .player_introduce{
-    position: absolute;
-    left: 30%;
-    width: 60%;
-}
 .blog{
     background: rgba(12, 43, 84, 1);
     color:#FFF;
@@ -397,8 +377,6 @@ transform:translatex(0);
     padding:10px;
     border-radius: 10px;
 }
-
-
 
 .blogger-notice { text-align: center; padding: 10px; background: #DFF2BF; border: 1px solid; color: #4F8A10; margin-bottom: 10px; }
 form.blogger { font-size: 16px; }
@@ -440,4 +418,39 @@ form.blogger ul li { color: #ff0000; margin-bottom: 5px; }
       width: 100%;
       height: 412px;
       margin: auto;
+  }
+
+  .teams img{
+      position:relative;
+      float:left;
+      margin: 5px 0;
+  }
+  .teams .name{
+      font-size: 14pt;
+      color: #FFF;
+  }
+  .teams .nickname{
+      font-size: 16pt;
+      color:#1581d1;
+  }
+  .teams .player_introduce{
+      position: absolute;
+      left: 30%;
+      width: 60%;
+  }
+
+  section#team .align {
+  	font-size: 6em;
+  	text-align: center;
+  }
+  #team h1 {
+  	font-size: 3em;
+  	margin-bottom: 1em;
+  	margin-top: 0.5em;
+  }
+  #team {
+  	padding-top: 4.75em;
+  }
+  #team {
+  	padding-bottom: 0;
   }
