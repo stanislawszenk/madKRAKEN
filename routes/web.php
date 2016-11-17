@@ -55,3 +55,5 @@ Route::resource('admin/edit-news', 'EditNewsController');
 Route::get('admin/delete-news', 'DeleteNewsController@index');
 Route::get('admin/delete-news/{id}', 'DeleteNewsController@deleteNews');
 Route::resource('admin/spons', 'SponsorsController');
+Route::resource('admin/teams/teamsManagement', 'AdminTeamController');
+Route::resource('admin/teams/playersManagement', 'AdminPlayerController');

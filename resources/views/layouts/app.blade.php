@@ -27,7 +27,13 @@
                         <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{URL::asset('admin')}}"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                         <li class="{{ Request::is('admin/news') ? 'active' : '' }}"><a href="{{URL::asset('admin/news')}}"><i class="fa fa-newspaper-o" aria-hidden="true"></i><span class="hidden-xs hidden-sm">News</span></a></li>
                         <li class="{{ Request::is('admin/spons') ? 'active' : '' }}"><a href="{{URL::asset('admin/spons')}}"><i class="fa fa-address-book" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Sponsors</span></a></li>
-                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Teams</span></a></li>
+                        <li data-toggle="collapse" data-target="#teams" class="collapsed {{ Request::is('admin/teams*') ? 'active' : '' }}">
+                            <a href="#"><i class="fa fa-user"></i> Teams <span class="arrow"></span></a>
+                        </li>
+                        <ul class="sub-menu collapse" id="teams">
+                            <li class="active"><a href="admin/teams/teamsManagement">Teams Management</a></li>
+                            <li><a href="admin/teams/playersManagement">Players management</a></li>
+                        </ul>
                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
                         <li><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Quit Panel</span></a></li>
                     </ul>
