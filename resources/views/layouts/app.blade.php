@@ -30,9 +30,9 @@
                         <li data-toggle="collapse" data-target="#teams" class="collapsed {{ Request::is('admin/teams*') ? 'active' : '' }}">
                             <a href="#"><i class="fa fa-users"></i> Teams <span class="arrow"></span></a>
                         </li>
-                        <ul class="sub-menu collapse" id="teams">
-                            <li><a href="admin/teams/teamsManagement"><i class="fa fa-users"></i>Teams Management</a></li>
-                            <li><a href="admin/teams/playersManagement"><i class="fa fa-user-circle"></i>Players management</a></li>
+                        <ul class="sub-menu collapse {{ Request::is('admin/teams*') ? 'in' : '' }}" id="teams">
+                            <li class="{{ Request::is('admin/teams/teamsManagement') ? 'active' : '' }}"><a href="{{URL::asset('admin/teams/teamsManagement')}}"><i class="fa fa-users"></i>Teams Management</a></li>
+                            <li class="{{ Request::is('admin/teams/playersManagement') ? 'active' : '' }}"><a href="{{URL::asset('admin/teams/playersManagement')}}"><i class="fa fa-user-circle"></i>Players management</a></li>
                         </ul>
                         <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Users</span></a></li>
                         <li><a href="/"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Quit Panel</span></a></li>
@@ -63,6 +63,7 @@
                                             <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li>
+                                                @if(Auth::check())
                                                 <div class="navbar-content">
                                                     <span>{{Auth::user()->name}}</span>
                                                     <p class="text-muted small">
@@ -72,6 +73,7 @@
                                                     </div>
                                                     <a href="/profile" class="view btn-sm active">View Profile</a>
                                                 </div>
+                                                @endif
                                             </li>
                                         </ul>
                                     </li>
