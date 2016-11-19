@@ -28,6 +28,7 @@ class PlayersFormRequest extends Request
             'nickname' => 'required',
             'firstname' => 'required',
             'description' => 'required',
+            'id_team' => 'required',
             'images' => 'required|image',
         ];
         return $rules;
