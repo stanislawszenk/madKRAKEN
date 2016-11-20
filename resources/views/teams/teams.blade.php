@@ -3,14 +3,14 @@
 @section('content')
 <ul class="teams" style="position:fixed; left: 0; width: 15%;">
     @foreach($teams as $t)
-    <li class="text-center"><a href="#{{$t->name}}"><img src="{{asset($t->images)}}" class="img-responsive img-circle" style="width: 58px; height: 58px; float:right; margin: 10px;" /><span style="margin-top: 20px;position: absolute;left: 30%;">{{$t->name}}</span></a></li>
+    <li class="text-center"><a href="#{{$t->id}}{{$t->id}}"><img src="{{asset($t->images)}}" class="img-responsive img-circle" style="width: 58px; height: 58px; float:right; margin: 10px;" /><span style="margin-top: 20px;position: absolute;left: 30%;">{{$t->name}}</span></a></li>
     @endforeach
 </ul>
 <!-- ici tu géreras l'affichage des team, auxquels on va rajouter une colonne
 dans le SQL qui va s'appeler name en VARCHAR(255) histoire d'avoir un nom
  propre en Counter Strike ou Heroes of the Storm...!-->
  @foreach($teams as $team)
-<section id="{{$team->name}}" class="col-lg-12" style="margin-bottom: 50px;background: rgba(12, 43, 84, 0.8);">
+<section id="{{$team->id}}{{$team->id}}" class="col-lg-12" style="margin-bottom: 50px;background: rgba(12, 43, 84, 0.8);">
         <div class="text-center">
             <img src="{{$team->images}}" class="img-responsive" style="width: 1170px; height: 400px;" />
         </div>

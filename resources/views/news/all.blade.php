@@ -4,7 +4,9 @@
         <div class="news">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 news">
                 <div class="hovereffect">
+<a href="/news/show/{{ $post->id }}-{{ $post->slug }}">
                     <img src="{{$post->images}}" alt="{{$post->title}}" class="img-responsive" />
+
                     <div class="overlay">
                         <span class="text-center">
                     <h2>{{ $post->title }}</h2></span>
@@ -13,7 +15,9 @@
                         </div>
                         <a class="info" href="/news/show/{{ $post->id }}-{{ $post->slug }}"><b>+</b></a>
                     </div>
+                    </a>
                 </div>
+
             </div>
         </div>
     @endforeach
