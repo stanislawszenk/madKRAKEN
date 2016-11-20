@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="span3 well">
+    <div class="span3 contact">
         <center>
         <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="{{asset($user->avatar)}}" name="aboutme" width="140" height="140" class="img-circle"></a>
         <h3>{{$user->name}}</h3>
@@ -24,8 +24,8 @@
                     </center>
                     <hr>
                     <center>
-                    <p class="text-left"><strong></strong><br>
-                        {{$user->email}}</p>
+                    <p class="text-left"><strong>About me:</strong><br>
+                        {{$user->description}}</p>
                     <br>
                     </center>
                 </div>
