@@ -10,7 +10,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
-<body>
+<body data-spy="scroll" data-target=".teams" data-offset="60">
 
 <div class="container nav-container">
     <div class="col-lg-12">
@@ -91,6 +91,22 @@
 <script>
 var xhr2 = false;
 $(document).ready(function() {
+    $(".teams a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== ""){
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900);
+    }
+      }); // End if
    if(xhr2 !== false)
    {
        xhr2.abort();

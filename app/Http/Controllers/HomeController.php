@@ -28,7 +28,8 @@ class HomeController extends Controller
         if(Auth::user()->admin == 1){
         $news = Posts::orderBy('id', 'DESC')->get();
         $user = User::all();
-        return view('admin/home', ['post' => $news, 'user'=>$user]);
+        $number = Posts::count();
+        return view('admin/home', ['post' => $news, 'user'=>$user, 'num' => $number]);
     }else{
         return view('admin/permission');
     }

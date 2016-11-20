@@ -17,8 +17,8 @@ public function index($id) {
     $comment = \DB::table('comment')
                 ->join('users', 'comment.user_id', '=', 'users.id')
                 ->select('users.*', 'comment.*')
-                ->where('comment.news_id', '=', $id)
-                ->get();
+                ->where('comment.posts_id', '=', $id)
+                ->get()->paginate(10);
     if(count($post) == 0)
         return "Error";
 

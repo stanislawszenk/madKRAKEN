@@ -28,8 +28,8 @@ class PageController extends Controller
         $comment = \DB::table('comment')
                     ->join('users', 'comment.user_id', '=', 'users.id')
                     ->select('users.*', 'comment.*')
-                    ->where('comment.news_id', '=', $id)
-                    ->get();
+                    ->where('comment.posts_id', '=', $id)
+                    ->paginate(4);
         if(count($post) == 0)
             return "Error";
 
@@ -39,7 +39,7 @@ class PageController extends Controller
     public function postComment(CommentFormRequest $request){
         $message = $request->message;
         $id = $request->news_id;
-        \DB::insert('insert into comment (news_id, user_id, message) values(?,?,?)',
+        \DB::insert('insert into comment (posts_id, user_id, message) values(?,?,?)',
          [$id, Auth::user()->id, $message]);
          return back();
     }

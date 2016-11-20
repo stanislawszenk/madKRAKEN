@@ -1,4 +1,4 @@
-@if(count($comment) >= 1))
+@if(count($comment) >= 1)
 <article class="blog">
     <h2>Commentaire</h2>
     @if (session('message'))
@@ -20,6 +20,7 @@
     <div class="row">
     <div class="col-lg-2"><img src="{{ asset($com->avatar) }}" class="img-responsive"/></div>
     <div class="col-lg-8">{{$com->name}}
+        <p><time datetime="{{ $com->created_at }}">{{ date('F d, Y H:i:s', strtotime($com->created_at)) }}</time></p>
         <p>{{$com->message}}</p>
     </div>
     <div class="col-lg-2">
@@ -42,6 +43,7 @@
 </div>
     <hr />
     @endforeach
+    {{ $comment->links() }}
     <ul>
         @foreach($errors->all() as $error)
             <li>{{ $error }}</li>

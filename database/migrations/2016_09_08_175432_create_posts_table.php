@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->text('title');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

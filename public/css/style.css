@@ -5,6 +5,7 @@ html, body {
 body{
     background: #020e1e url(/images/background.png) no-repeat center top;
     min-height: 100%;
+    color:#FFF;
 }
 /*
 **************************
@@ -44,34 +45,7 @@ body{
     text-align: right;
     border-top: 1px solid transparent;
 }
-.nav-tabs {
-    border-bottom: 1px solid #020e1e;
-}
-.nav-tabs > li > a {
-    margin-right: 2px;
-    line-height: 1.42857143;
-    border: 1px solid #020e1e;
-    border-radius: 0px 0px 0 0;
-    padding-left: 38%;
-    color:#FFF;
-}
-.nav-tabs > li > a:hover {
-    background: #11303d;
-    border: 1px solid #11303d
-}
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    color: #FFF;
-    background-color: #11303d;
-    border: 1px solid #11303d;
-    border-bottom-color: transparent;
-    cursor: default;
-    padding-left: 38%;
-}
-.nav-tabs > li {
-    float: left;
-    margin-bottom: -1px;
-    width: 50%;
-}
+
 .navbar-toggle {
     top: 2em;
 }
@@ -389,16 +363,10 @@ form.blogger textarea { width: 500px; height: 150px; line-height: 26px; font-siz
 form.blogger input[type="submit"] { margin-left: 110px; width: 508px; line-height: 26px; font-size: 20px; min-height: 26px; }
 form.blogger ul li { color: #ff0000; margin-bottom: 5px; }
 
-
-
-.abouts img{
-    position:relative;
-    left:120px;
-}
-
 .abouts{
     background: rgba(12, 43, 84, 0.5);
     color: #FFF;
+    min-height: 220px;
 }
 
 .carousel_text{
@@ -419,38 +387,58 @@ form.blogger ul li { color: #ff0000; margin-bottom: 5px; }
       height: 412px;
       margin: auto;
   }
-
-  .teams img{
-      position:relative;
-      float:left;
-      margin: 5px 0;
-  }
-  .teams .name{
-      font-size: 14pt;
+  .description{
       color: #FFF;
   }
-  .teams .nickname{
-      font-size: 16pt;
-      color:#1581d1;
+  .description > p{
+      color: #FFF;
   }
-  .teams .player_introduce{
+  .teams li{
+      z-index:100;
+      background:rgba(12, 43, 84, 0.8);
+      list-style: none;
+      width: 100%;
+      height: 80px;
+      margin: 5px;
+  }
+  .teams a{
+      text-decoration: none;
+      color: #FFF;
+  }
+  /*teams*/
+  /*TEAMS*/
+  .nav.nav-justified > li > a { position: relative; }
+  .nav.nav-justified > li > a:hover,
+  .nav.nav-justified > li > a:focus { background-color: transparent; }
+  .nav.nav-justified > li > a > .quote {
       position: absolute;
-      left: 30%;
-      width: 60%;
+      left: 0px;
+      top: 0;
+      opacity: 0;
+      width: 30px;
+      height: 30px;
+      padding: 5px;
+      background-color: #11303d;
+      border-radius: 15px;
+      color: #fff;
   }
-
-  section#team .align {
-  	font-size: 6em;
-  	text-align: center;
+  .nav.nav-justified > li > a > img { box-shadow: 0 0 0 5px #199bf2; }
+  .nav.nav-justified > li > a > img {
+      max-width: 100%;
+      opacity: .3;
+      -webkit-transform: scale(.8,.8);
+              transform: scale(.8,.8);
+      -webkit-transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+              transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
-  #team h1 {
-  	font-size: 3em;
-  	margin-bottom: 1em;
-  	margin-top: 0.5em;
+  .nav.nav-justified > li.active > a > img,
+  .nav.nav-justified > li:hover > a > img,
+  .nav.nav-justified > li:focus > a > img {
+      opacity: 1;
+      -webkit-transform: none;
+              transform: none;
+      -webkit-transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+              transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
-  #team {
-  	padding-top: 4.75em;
-  }
-  #team {
-  	padding-bottom: 0;
-  }
+  .tab-pane .tab-inner { padding: 30px 0 20px; }
+  /*endteams*/

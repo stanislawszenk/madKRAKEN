@@ -2,7 +2,7 @@
     <div class="row">
     @foreach($news as $post)
         <div class="news">
-            <div class="col-md-4 news">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 news">
                 <div class="hovereffect">
                     <img src="{{$post->images}}" alt="{{$post->title}}" class="img-responsive" />
                     <div class="overlay">

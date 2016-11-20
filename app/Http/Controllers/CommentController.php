@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\CommentFormRequest;
@@ -17,7 +17,7 @@ class CommentController extends Controller{
         $message = $request->message;
         $user = Auth::user()->id;
         $id = $request->news_id;
-        \DB::insert('insert into comment (news_id, user_id, message) values(?,?,?)',
+        \DB::insert('insert into comment (posts_id, user_id, message) values(?,?,?)',
          [$id, $user, $message]);
          return redirect()->back()->with('message', 'Comment posted with success!');
     }

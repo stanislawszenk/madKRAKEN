@@ -9,7 +9,7 @@
             <h2>Last News</h2>
         <ul class="last_news">
             @foreach($post as $news)
-        <li ><h3><a class="btn btn-info" href="news/show/{{ $news->id }}-{{ $news->slug }}" target="_BLANK">{{$news->title}}</a></h3></li>
+        <li ><h3><a class="btn btn-info" href="news/show/{{ $news->id }}-{{ $news->slug }}" target="_BLANK">{{$news->title}} <span class="badge">{{count($news->comments)}}</span></a></h3></li>
             @endforeach
         </ul>
         </div>

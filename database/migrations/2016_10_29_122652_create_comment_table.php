@@ -15,11 +15,11 @@ class CreateCommentTable extends Migration
     {
         Schema::create('comment', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('news_id');
+            $table->integer('posts_id');
             $table->integer('user_id');
             $table->text('message');
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(\DB::raw('ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

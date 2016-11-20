@@ -1,7 +1,6 @@
 <!--ici on gére l'affichage des joueurs!-->
-<div class="col-md-2">
-	<img src="{{asset($player->images)}}"
-	class="img-circle img-responsive" >
-	<h3 class="text-center" >{{$player->firstname}} {{$player->nickname}} {{$player->name}}
-	<small>{!!$player->description!!}</small></h3>
-</div>
+<li role="presentation" class="@if($key == 0) {{ 'active' }} @endif">
+    <a href="#{{$player->id}}" aria-controls="{{$player->id}}" role="tab" data-toggle="tab">
+        <img class="img-circle img-responsive" src="{{asset($player->images)}}" style="width: 159px; height: 149px;" />
+    </a>
+</li>
