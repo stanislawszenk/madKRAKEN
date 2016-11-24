@@ -121,7 +121,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src='{{ asset('js/tinymce.min.js') }}'></script>
+    <script src="{{ asset('js/tinymce.min.js') }}"></script>
     <script>
      var xhr2 = false;
     $(document).ready(function() {

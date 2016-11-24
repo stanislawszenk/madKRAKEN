@@ -8,15 +8,29 @@ use App\Players;
 use App\Teams;
 
 class AdminPlayerController extends Controller{
-
+    /**
+     * index function
+     * @url local/admin/playersManagement
+     * @return view with players and teams
+     */
     public function index(){
             $players = Players::all();
             $teams = Teams::all();
         return view('admin/players/home', ['players' => $players, 'teams' => $teams]);
     }
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function create(){
         $id = new Players();
     }
+    /**
+     * Save the player into the bdd.
+     * @method Post
+     * @return succes or failed
+     */
     public function store(PlayersFormRequest $request){
         $name = $request->name;
         $firstname = $request->firstname;

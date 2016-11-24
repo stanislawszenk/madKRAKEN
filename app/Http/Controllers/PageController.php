@@ -29,6 +29,7 @@ class PageController extends Controller
                     ->join('users', 'comment.user_id', '=', 'users.id')
                     ->select('users.*', 'comment.*')
                     ->where('comment.posts_id', '=', $id)
+                    ->orderBy('comment.created_at', 'desc')
                     ->paginate(4);
         if(count($post) == 0)
             return "Error";

@@ -1,4 +1,6 @@
-<div class="modal-header"><div class="alert alert-info">
+
+<div class="modal-header">
+    <div class="alert alert-info">
 Edit News <strong>{{$post->title}}</strong>
 </div></div>
                 <div class="panel-body">
